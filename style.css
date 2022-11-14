@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color:beige;
+    font-family: monospace;
+    font-size: 16px;
+    overflow-x: hidden;
+    
+
+}
+h3{
+    color:rgb(209, 209, 13);
+    font-family: monospace;
+    font-size: 30px;
+}
+div.topcontainer {
+    width: 99%;
+    height: auto;
+    display:flex;
+    flex-wrap: wrap;
+    flex-shrink: auto;
+    flex-grow: auto;
+    margin-top:5px;
+}
+header{
+   
+    width: 100vw;
+    height:auto;
+    background-color: rgba(228, 70, 58, 0.756);
+    text-align: center;
+    margin-left:15px;
+}    
+nav {
+    width: 95%;
+    height:auto;
+ 
+}
+nav ul #movielist{
+    background-color: brown;
+    width:auto;
+    height:auto;
+    list-style-type: none;
+    text-decoration: none;
+    
+}
+
+nav ul li.movielist-item{
+    display:inline-flex;
+    margin:5px 5px 15px 5px;
+    padding: 5px;
+   
+} 
+
+main{
+    width: auto;
+    height: auto;
+    background-color: grey;
+    margin-left:15px;
+}
+main nav1 {
+    width: 95%;
+    height:auto;
+}
+main nav1 div.flexcentercontainer {
+    width: 99%;
+    height: auto;
+    margin: 15px;
+    padding:10px;
+}
+main nav1 div.flexcentercontainer ul#moviepostergrid {
+    width:95%;
+    height:auto;
+    color: white;
+    list-style-type: none;
+    display:flex;
+    flex-wrap: wrap;
+    flex-shrink: auto;
+    flex-grow: auto;
+    gap:25px;
+      
+}
+
+main nav1 div.flexcontainercenter ul#moviepostergrid li.item {
+    width: auto;
+    height:auto;
+    color: white;
+    list-style-type: none; 
+    
+   
+}
+main nav1 div.flexcontainercenter ul#moviepostergrid li.item a {
+    list-style-type: none;
+   
+}
+main nav1 div.flexcontainercenter ul#moviepostergrid li.item a img {
+    width: 17rem;
+    Height: auto;
+    border: 5px inset rgb(179, 30, 30);
+    cursor: pointer;
+  
+}
