@@ -1,36 +1,36 @@
    // op laden wachten
-const onload = document.querySelector('html');
-     onload.addEventListener("onunload",showMovies);
-     // .map 
-const movieslink = movies.map(movies => movies.imdbID);
+   const onload = document.querySelector('html');
+   onload.addEventListener("onunload",showMovies);
+   // .map 
 const moviesgrid = movies.map(movies => movies.poster);
 moviesgrid.forEach( moviesgrid  =>  { 
-   //create listitems with a element with link to imdb and img element with imglink
-  const ListElement = document.createElement("li");
-  ListElement
-  ListElement.classList.add(".item");
-  ListElement
+ //create listitems with a element with link to imdb and img element with imglink
+const ListElement = document.createElement("li");
+ListElement
+ListElement.classList.add(".item");
+ListElement
 const newA = document.createElement("a");
-  newA
-
+newA
+movies.forEach (movies => {
+newA.href ="https://imdb.com/title/"+ movies.imdbID +"/?ref_=fn_tt_tt_1";
+});
 const newImg = document.createElement("img");
-  newImg 
+newImg 
 const List = document.getElementById("moviepostergrid");
-  List
-  List.appendChild(ListElement);
-  ListElement
-  ListElement.appendChild(newA);
-  newA.href ="https://imdb.com/title/ " + movieslink + " /?ref_=fn_tt_tt_1";
-  newA.appendChild(newImg);
-  newImg.src = moviesgrid , moviesgrid;
- });
+List
+List.appendChild(ListElement);
+ListElement
+ListElement.appendChild(newA);
+newA
+newA.appendChild(newImg);
+newImg.src = moviesgrid 
+});
 
-  function showMovies(item , index , array ) {
-  return movieslink
- };
-  console.log(showMovies.index);
-  console.log(moviesgrid);
-console.log(movieslink);
+function showMovies() {
+return moviesgrid
+};
+console.log(showMovies);
+console.log(moviesgrid);
 
 //const checkbox .filters 
 const select = document.querySelector("#checkbox1");
