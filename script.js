@@ -12,7 +12,7 @@ ListElement
 const newA = document.createElement("a");
 newA
 movies.forEach (movies => {
-newA.href ="https://imdb.com/title/"+ movies.imdbID +"/?ref_=fn_tt_tt_1";
+newA.href ="https://imdb.com/title/"+movies.imdbID;
 });
 const newImg = document.createElement("img");
 newImg 
