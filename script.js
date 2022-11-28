@@ -1,95 +1,278 @@
    // op laden wachten
    const onload = document.querySelector('html');
    onload.addEventListener("onunload",showMovies);
-   // .map 
-const moviesgrid = movies.map(movies => movies.poster);
-moviesgrid.forEach( moviesgrid  =>  { 
- //create listitems with a element with link to imdb and img element with imglink
+
+ //create listitems with a element with link to imdb and img element with imglink poster
+ movies.forEach(movie => {
 const ListElement = document.createElement("li");
 ListElement
 ListElement.classList.add(".item");
 ListElement
-const newA = document.createElement("a");
-newA
-movies.forEach (movies => {
-newA.href ="https://imdb.com/title/"+movies.imdbID;
-});
-const newImg = document.createElement("img");
-newImg 
+const outboundLink = document.createElement("a");
+  outboundLink.href = "https://imdb.com/title/" + movie.imdbID;
+
+const poster = document.createElement("img");
+  poster.src = movie.poster;
 const List = document.getElementById("moviepostergrid");
 List
 List.appendChild(ListElement);
 ListElement
-ListElement.appendChild(newA);
-newA
-newA.appendChild(newImg);
-newImg.src = moviesgrid 
+ListElement.appendChild(outboundLink);
+outboundLink
+outboundLink.appendChild(poster);
+poster
+});
+function showMovies() {
+return movies;
+};
+// console.log(movies);
+//search movies title
+
+
+const search=document.getElementById("searchField");
+search.addEventListener("input", (e) =>{
+value = e.target.value;
+const button = document.getElementById("submit");
+button.addEventListener("input",submit,(e) =>{
+value = e.target.value;})
+console.log(value);
+
 });
 
-function showMovies() {
-return moviesgrid
-};
-console.log(showMovies);
-console.log(moviesgrid);
 
-//const checkbox .filters 
-const select = document.querySelector("#checkbox1");
-select.addEventListener("click",checkbox1Filter);
+function submit(e){
 
-const checkbox1 = movies.filter(movies => movies.year > 2014);
-const ListElement = document.createElement("li");
-  ListElement
-  ListElement.classList.add(".item");
-  ListElement
-const newA = document.createElement("a");
-  newA
-
-const newImg = document.createElement("img");
-  newImg 
+if(this.submit)  { 
+const input = movies.filter(movies => movies.title.includes(search[""]));
 const List = document.getElementById("moviepostergrid");
-  List
-List.appendChild(ListElement);
+List
+List.remove(List);
+const newgrid = document.querySelector(".flexcentercontainer");
+newgrid
+const ul = document.createElement("ul");
+ul
+ul.setAttribute("id","moviepostergrid");
+ul
+input.forEach(movie =>{
+const newListElement = document.createElement("li");
+newListElement
+newListElement.classList.add(".item");
+newListElement
+const outboundLink = document.createElement("a");
+  outboundLink.href = "https://imdb.com/title/" + movie.imdbID;
+const poster = document.createElement("img");
+  poster.src = movie.poster;
+newgrid.appendChild(ul);
+ul
+ul.appendChild(newListElement);
+newListElement
+newListElement.appendChild(outboundLink);
+outboundLink
+outboundLink.appendChild(poster);
+poster  
+})}};
+console.log(search);
 
-  ListElement.appendChild(newA);
-  newA
-  newA.appendChild(newImg);
-  newImg.src = checkbox1 , checkbox1 ; 
+//const checkbox .filters maakt nieuwe grid met resultaten van selecteren checkbox
 
-function checkbox1Filter(){console.log(checkbox1)};
-//2e filter
+const checkbox1 = movies.filter(movies => movies.year > 2013);
+
+const select = document.querySelector("#checkbox1");
+select.addEventListener("change",checkbox1Filter);
+function checkbox1Filter(){
+if(this.select)  { 
+const List = document.getElementById("moviepostergrid");
+List
+List.remove(List);
+const newgrid = document.querySelector(".flexcentercontainer");
+newgrid
+const ul = document.createElement("ul");
+ul
+ul.setAttribute("id","moviepostergrid");
+ul
+checkbox1.forEach(movie =>{
+const newListElement = document.createElement("li");
+newListElement
+newListElement.classList.add(".item");
+newListElement
+const outboundLink = document.createElement("a");
+  outboundLink.href = "https://imdb.com/title/" + movie.imdbID;
+const poster = document.createElement("img");
+  poster.src = movie.poster;
+newgrid.appendChild(ul);
+ul
+ul.appendChild(newListElement);
+newListElement
+newListElement.appendChild(outboundLink);
+outboundLink
+outboundLink.appendChild(poster);
+poster  
+}
+);
+}}; 
+//console.log(select);
+//console.log(checkbox1);
+//2e filter ook nog geen result in browser dom
 
 const select2 = document.querySelector("#checkbox2");
-select2.addEventListener("click", checkbox2Filter);
+select2.addEventListener("change", checkbox2Filter);
 
-const checkbox2 = movies.filter(movies => movies.title == "The Avengers");
+const checkbox2 = movies.filter(movies => movies.title.includes("Avengers"));
 
-function checkbox2Filter(){console.log(checkbox2)};
+function checkbox2Filter(){
+if(this.select)  { 
+const List = document.getElementById("moviepostergrid");
+List
+List.remove(List);
+const newgrid = document.querySelector(".flexcentercontainer");
+newgrid
+const ul = document.createElement("ul");
+ul
+ul.setAttribute("id","moviepostergrid");
+ul
+checkbox2.forEach(movie =>{
+const newListElement = document.createElement("li");
+newListElement
+newListElement.classList.add(".item");
+newListElement
+const outboundLink = document.createElement("a");
+  outboundLink.href = "https://imdb.com/title/" + movie.imdbID;
+const poster = document.createElement("img");
+  poster.src = movie.poster;
+newgrid.appendChild(ul);
+ul
+ul.appendChild(newListElement);
+newListElement
+newListElement.appendChild(outboundLink);
+outboundLink
+outboundLink.appendChild(poster);
+poster  
+})}};
+//console.log(checkbox2);
 
-//3e filter
+//3e filter werkt niet goed genoeg mist titels in filter en nog geen result in dom
 const select3 = document.querySelector("#checkbox3");
-select3.addEventListener("click", checkbox3Filter);
+select3.addEventListener("change", checkbox3Filter);
 
-const checkbox3 = movies.filter(movies => movies.title === "X-Men");
+const checkbox3 = movies.filter(movies => movies.title.includes("X-Men"));
 
-function checkbox3Filter(){console.log(checkbox3)};
+function checkbox3Filter(){
+if(this.select)  { 
+const List = document.getElementById("moviepostergrid");
+List
+List.remove(List);
+const newgrid = document.querySelector(".flexcentercontainer");
+newgrid
+const ul = document.createElement("ul");
+ul
+ul.setAttribute("id","moviepostergrid");
+ul
+checkbox3.forEach(movie =>{
+const newListElement = document.createElement("li");
+newListElement
+newListElement.classList.add(".item");
+newListElement
+const outboundLink = document.createElement("a");
+  outboundLink.href = "https://imdb.com/title/" + movie.imdbID;
+const poster = document.createElement("img");
+  poster.src = movie.poster;
+newgrid.appendChild(ul);
+ul
+ul.appendChild(newListElement);
+newListElement
+newListElement.appendChild(outboundLink);
+outboundLink
+outboundLink.appendChild(poster);
+poster
+})}};
+//console.log(checkbox3);
 
-//4e filter
+//4e filter vindt niet alle titels en nog geen result in dom
 
 const select4 = document.querySelector("#checkbox4");
-select4.addEventListener("click", checkbox4Filter);
+select4.addEventListener("change", checkbox4Filter);
 
-const checkbox4 = movies.filter(movies => movies.title === "Princess");
+const checkbox4 = movies.filter(movies => movies.title.includes("Princess"));
 
-function checkbox4Filter(){console.log(checkbox4)};
+function checkbox4Filter(){
+if(this.select)  { 
+const List = document.getElementById("moviepostergrid");
+List
+List.remove(List);
+const newgrid = document.querySelector(".flexcentercontainer");
+newgrid
+const ul = document.createElement("ul");
+ul
+ul.setAttribute("id","moviepostergrid");
+ul
+checkbox4.forEach(movie =>{
+const newListElement = document.createElement("li");
+newListElement
+newListElement.classList.add(".item");
+newListElement
+const outboundLink = document.createElement("a");
+  outboundLink.href = "https://imdb.com/title/" + movie.imdbID;
+const poster = document.createElement("img");
+  poster.src = movie.poster;
+newgrid.appendChild(ul);
+ul
+ul.appendChild(newListElement);
+newListElement
+newListElement.appendChild(outboundLink);
+outboundLink
+outboundLink.appendChild(poster);
+poster
+})}};
+//console.log(checkbox4);
 
-//5e filter
+//5e filter als hiervoor de 4e filter
 
 const select5 = document.querySelector("#checkbox5");
-select5.addEventListener("click", checkbox5Filter);
+select5.addEventListener("change", checkbox5Filter);
 
-const checkbox5 = movies.filter(movies => movies.title === "Batman");
+const checkbox5 = movies.filter(movies => movies.title.includes("Batman"));
 
-function checkbox5Filter(){console.log(checkbox5)};
+function checkbox5Filter(){
+if(this.select)  { 
+const List = document.getElementById("moviepostergrid");
+List
+List.remove(List);
+const newgrid = document.querySelector(".flexcentercontainer");
+newgrid
+const ul = document.createElement("ul");
+ul
+ul.setAttribute("id","moviepostergrid");
+ul
+checkbox5.forEach(movie =>{
+const newListElement = document.createElement("li");
+newListElement
+newListElement.classList.add(".item");
+newListElement
+const outboundLink = document.createElement("a");
+  outboundLink.href = "https://imdb.com/title/" + movie.imdbID;
+const poster = document.createElement("img");
+  poster.src = movie.poster;
+newgrid.appendChild(ul);
+ul
+ul.appendChild(newListElement);
+newListElement
+newListElement.appendChild(outboundLink);
+outboundLink
+outboundLink.appendChild(poster);
+poster
+})}};
+
+//console.log(checkbox5);
+
+
+
+
+
+
+
+
+
+
 
 
 

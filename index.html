@@ -14,24 +14,26 @@
 <body onunload="showMovies()"> 
 <div class="topcontainer">
  <header>
-    <h3> Movie Finder </h3>
+    <h3><a href="index.html">Movie Finder</a> </h3>
 
   <nav>
    <ul id="movielist">
+   <li class="search"><input type="search" name="searchField" id="searchField" placeholder="movie title"/>
+ <button id="submit" onclick="submit()">Search</button></li> 
     <li class="movielist-item">
-        <input type="checkbox" id="checkbox1" name="checkbox1" value="checkbox1">
+        <input type="radio" id="checkbox1" name="checkbox1" value="checkbox1">
     </li><label>Latest Movies 2014 and newer</label>
     <li class="movielist-item">
-        <input type="checkbox" id="checkbox2" name="checkbox2" value="checkbox2">
+        <input type="radio" id="checkbox2" name="checkbox2" value="checkbox2">
     </li><label>Avengers Movies</label>
     <li class="movielist-item">
-        <input type="checkbox" id="checkbox3" name="checkbox3" value="checkbox3">
+        <input type="radio" id="checkbox3" name="checkbox3" value="checkbox3">
     </li><label>X-men Movies</label>
     <li class="movielist-item">
-        <input type="checkbox" id="checkbox4" name="checkbox4" value="checkbox4">
+        <input type="radio" id="checkbox4" name="checkbox4" value="checkbox4">
     </li><label>Princess Movies</label>
     <li class="movielist-item">
-        <input type="checkbox" id="checkbox5" name="checkbox5" value="checkbox5">
+        <input type="radio" id="checkbox5" name="checkbox5" value="checkbox5">
     </li><label>Batman Movies</label>
    </ul>
   </nav>
@@ -45,9 +47,8 @@
  </nav1>
 </main>
 <footer>
-    <div></div>
-    <div></div>
-    <div></div>
+    <div class="footer"><a href="index.html">Movie Finder Home</a> </div>
+   
 </footer>
 </body>
 
