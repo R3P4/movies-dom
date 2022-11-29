@@ -29,12 +29,10 @@ return movies;
 //search movies title
 
 
-const search=document.getElementById("searchField");
+const search = document.getElementById("searchField");
 search.addEventListener("input", (e) =>{
-value = e.target.value;
-const button = document.getElementById("submit");
-button.addEventListener("input",submit,(e) =>{
-value = e.target.value;})
+
+const value = e.target.value.toLowerCase();
 console.log(value);
 
 });
@@ -43,7 +41,8 @@ console.log(value);
 function submit(e){
 
 if(this.submit)  { 
-const input = movies.filter(movies => movies.title.includes(search[""]));
+
+const input = movies.filter(movies => movies.title.toLowerCase().includes(search.value));
 const List = document.getElementById("moviepostergrid");
 List
 List.remove(List);
@@ -263,6 +262,12 @@ poster
 })}};
 
 //console.log(checkbox5);
+
+
+
+
+
+
 
 
 
